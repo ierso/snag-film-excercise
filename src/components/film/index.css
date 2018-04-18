@@ -1,0 +1,21 @@
+.c-film {
+    max-width: 350px;
+    padding: .5em;
+}
+    .c-film__poster {
+
+    }
+        .c-film__poster-image {
+            width: 100%;
+        }
+    .c-film__title {
+
+    }
+        .c-film__title-copy {
+            color: #fff;
+            font-weight: 400;
+            letter-spacing: -.03em;
+            font-size: .9em;
+            font-family: 'Open Sans', sans-serif;
+            margin: .5em 0;
+        }

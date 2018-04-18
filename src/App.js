@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Slider from './components/slider/Slider';
+import Title from './components/title/Title';
+
+import { loadFilms } from './lib/mrssService';
+
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      films: [],
+      title: 'MRSS feed'
+    }
+  }
+
+  componentDidMount() {
+    loadFilms().then(data=>this.setState({
+      films: data
+    }));
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="c-app">
+        <div className="o-container">
+          <Title title={this.state.title}/>
+          <Slider films={this.state.films}/>
+        </div>
       </div>
     );
   }
