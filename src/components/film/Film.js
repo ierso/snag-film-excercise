@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import './index.css';
 
 class Film extends Component {
-    render(){     
+    render(){
+        var imageUrl = this.props.image.replace(/^http:\/\//i, 'https://'); 
         return (
             <div className="c-film">
                 <div className="c-film__poster">
                     <img className="c-film__poster-image" 
-                        src={this.props.image} 
+                        src={imageUrl} 
                         alt={this.props.title} 
                     />
                 </div>
