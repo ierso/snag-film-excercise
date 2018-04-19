@@ -1,4 +1,4 @@
-const mrssEndpoint = 'http://www.snagfilms.com/apis/films.json?limit=10'
+const mrssEndpoint = 'https://www.snagfilms.com/apis/films.json?limit=10'
 
 export const loadFilms = () => {
     return fetch(mrssEndpoint)
